@@ -1,6 +1,6 @@
 ---
 name: dev-local
-description: Local dev gotchas for real-device testing via ngrok/LAN (ALLOWED_DEV_ORIGINS) and Chrome-iOS hydration noise. Use when client components seem broken over a tunnel or on a phone.
+description: Local dev gotchas — real-device testing via ngrok/LAN (ALLOWED_DEV_ORIGINS), Chrome-iOS hydration noise, and the Next 16 image-optimizer SSRF guard that 400s /_next/image for localhost Saleor media (dev-only dangerouslyAllowLocalIP). Use when client components seem broken over a tunnel or on a phone, or when images show placeholders in local dev.
 ---
 
 # Local Development & Mobile Testing
@@ -100,8 +100,45 @@ Do **not** refactor `SearchBar` or disable SSR on the header to silence this.
 
 ---
 
+## Image optimizer 400s on localhost media (Next 16 SSRF guard)
+
+### Symptom
+
+- Catalog pages (home, PLP, PDP, category) show images fine, but **cart drawer, cart page, and checkout order summary show placeholders** in local dev.
+- Dev log repeats: `⚡ upstream image http://localhost:8001/... hostname resolved to private IP ["::1","127.0.0.1"] If this is expected and you understand SSRF risk, use images.dangerouslyAllowLocalIP = true to continue.`
+- `/_next/image?url=http%3A%2F%2Flocalhost%3A8001%2F…` responds **400**.
+
+### Cause
+
+Two image pipelines: `SaleorImage` with a Saleor `srcset` (`buildSaleorSrcSet`, default `saleor` pipeline in `src/lib/images.ts`) renders a plain `<img>` pointing straight at Saleor — never touches the optimizer, works with localhost. Cart drawer / cart page / order summary use raw `next/image` (no srcset) → `/_next/image?url=…`.
+
+Next 16's optimizer has an SSRF guard that **refuses upstreams resolving to private IPs** (127.0.0.1/::1). It runs **after** the `remotePatterns` allowlist — so the dev wildcard `hostname: "*"` in `next.config.js` does not help. Production with a public API host is unaffected.
+
+### Dev fix (already in place — keep it)
+
+`next.config.js` → `images`:
+
+```javascript
+...(isDevelopment ? { dangerouslyAllowLocalIP: true } : {}),
+```
+
+- Changing the local Saleor port needs **no change here** — the guard is IP-class based, not URL/port based; any `localhost:<port>` upstream passes in dev.
+- `next.config.js` changes require a dev-server **restart** (`pnpm dev`).
+- Verify: `curl -s -o /dev/null -w "%{http_code} %{content_type}\n" "http://localhost:3000/_next/image?url=http%3A%2F%2Flocalhost%3A8001%2Fthumbnail%2FUHJvZHVjdE1lZGlhOjM2%2F256%2Fwebp%2F&w=128&q=75"` → `200 image/webp`.
+
+### Production (revert / verify)
+
+- **Nothing to revert while the spread stays gated on `isDevelopment`** — a production build never includes the flag, so the SSRF guard stays active.
+- Never un-gate it or set `dangerouslyAllowLocalIP` unconditionally: it would let any request use the storefront as a proxy into private networks.
+- Pre-deploy check: `grep -n dangerouslyAllowLocalIP next.config.js` — only the dev-gated line may remain.
+- Code-level alternative (no config, for new surfaces): render these images with `SaleorImage` + a thumbnail `srcset` like the catalog pages do.
+
+---
+
 ## Anti-patterns
 
 ❌ **Don't debug carousel swipe on ngrok** before fixing `allowedDevOrigins` — client JS may not load  
 ❌ **Don't commit personal ngrok hostnames** — use `ALLOWED_DEV_ORIGINS` in `.env.local`  
 ❌ **Don't assume Chrome device toolbar = real phone** — it uses localhost + mouse events, not tunnel + touch
+❌ **Don't widen `remotePatterns` to fix localhost image 400s** — the SSRF guard runs after the allowlist; use the dev-gated `dangerouslyAllowLocalIP` (see above)
+❌ **Don't enable `dangerouslyAllowLocalIP` unconditionally** — dev-gated only; it is an SSRF bypass
