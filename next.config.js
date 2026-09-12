@@ -79,6 +79,12 @@ const config = {
 		// (max 3 concurrent requests; the inter-request delay applies at build time only)
 	},
 	images: {
+		// Next 16's image optimizer refuses upstreams resolving to private IPs (SSRF
+		// guard) -- it runs after the remotePatterns allowlist, so even the dev
+		// wildcard doesn't help. Locally the Saleor API is at localhost:<port>, so
+		// allow it in dev only; production must keep the guard.
+		...(isDevelopment ? { dangerouslyAllowLocalIP: true } : {}),
+
 		// WebP only: AVIF cold-encodes add ~500ms+ to first /_next/image hit on Vercel (hurts LCP).
 		formats: ["image/webp"],
 		remotePatterns: imageRemotePatterns,
