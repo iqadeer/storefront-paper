@@ -3,6 +3,13 @@ name: seo-metadata
 description: SEO: metadata helpers, product JSON-LD, OG images, hreflang/canonical for locale×channel. Use when adding page metadata, structured data, or social images.
 ---
 
+---
+
+name: seo-metadata
+description: SEO: metadata helpers, product JSON-LD, OG images, hreflang/canonical for locale×channel. Use when adding page metadata, structured data, or social images.
+
+---
+
 # SEO & Metadata
 
 Add page metadata, JSON-LD structured data, and OG images.

@@ -3,6 +3,13 @@ name: ui-images
 description: Images in Paper — Saleor already produces optimized thumbnails, so Vercel's optimizer must not redo that work. Covers the thumbnail ladder, remotePatterns allowlisting, minimumCacheTTL, deviceSizes/imageSizes budgets, and mandatory `sizes` on every fill image. Use when adding an <Image>, tuning image cost, debugging oversized requests, or touching next.config.js images config.
 ---
 
+---
+
+name: ui-images
+description: Images in Paper — Saleor already produces optimized thumbnails, so Vercel's optimizer must not redo that work. Covers the thumbnail ladder, remotePatterns allowlisting, minimumCacheTTL, deviceSizes/imageSizes budgets, and mandatory `sizes` on every fill image. Use when adding an <Image>, tuning image cost, debugging oversized requests, or touching next.config.js images config.
+
+---
+
 # Images
 
 Images are usually the largest line on a Paper storefront's Vercel bill — transformations and image cache writes both scale with the size of the catalog times the number of widths requested. The decisions here are about **not paying twice for the same optimization**.

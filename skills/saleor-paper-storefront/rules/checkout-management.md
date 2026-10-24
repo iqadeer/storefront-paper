@@ -3,6 +3,13 @@ name: checkout-management
 description: Checkout session lifecycle: cookie/URL id, RSC + client sync, payment completion/transition UX, shallow ?step= URLs, debugging CHECKOUT_NOT_FULLY_PAID. Use when debugging checkout flow, sessions, or payment completion.
 ---
 
+---
+
+name: checkout-management
+description: Checkout session lifecycle: cookie/URL id, RSC + client sync, payment completion/transition UX, shallow ?step= URLs, debugging CHECKOUT_NOT_FULLY_PAID. Use when debugging checkout flow, sessions, or payment completion.
+
+---
+
 # Checkout Management
 
 How checkout sessions are created, stored, synced, and completed — and how to debug payment failures, hydration mismatches, and `CHECKOUT_NOT_FULLY_PAID`. Surface layout is in [`paper-surfaces.md`](paper-surfaces.md); payment-app SDK steps in [`checkout-payment-gateways.md`](checkout-payment-gateways.md); auth in [`data-auth-routes.md`](data-auth-routes.md).

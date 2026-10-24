@@ -3,6 +3,13 @@ name: data-redirect-security
 description: Redirect URL security for auth emails and checkout/account flows: isAllowedRedirectUrl, redirectUrl, password reset, account confirmation, Host/Origin/X-Forwarded spoofing, NEXT_PUBLIC_STOREFRONT_URL, ALLOWED_EXTRA_ORIGINS, Saleor ALLOWED_CLIENT_HOSTS. Use when touching redirect allowlists or URLs sent to Saleor mutations.
 ---
 
+---
+
+name: data-redirect-security
+description: Redirect URL security for auth emails and checkout/account flows: isAllowedRedirectUrl, redirectUrl, password reset, account confirmation, Host/Origin/X-Forwarded spoofing, NEXT_PUBLIC_STOREFRONT_URL, ALLOWED_EXTRA_ORIGINS, Saleor ALLOWED_CLIENT_HOSTS. Use when touching redirect allowlists or URLs sent to Saleor mutations.
+
+---
+
 # Redirect URL Security
 
 Redirect URLs are security-sensitive everywhere. Any code path that accepts, builds, validates, stores, forwards, or follows a redirect URL must treat the destination origin as attacker-controlled until it has passed the shared allowlist check.

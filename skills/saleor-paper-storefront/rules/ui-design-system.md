@@ -3,6 +3,13 @@ name: ui-design-system
 description: The token vocabulary: OKLCH semantic color, typography role tokens, page-width containers, spacing/rhythm, radius/elevation/motion, cva variant matrix. Read before any visual/design work; tokens live in src/styles/brand.css.
 ---
 
+---
+
+name: ui-design-system
+description: The token vocabulary: OKLCH semantic color, typography role tokens, page-width containers, spacing/rhythm, radius/elevation/motion, cva variant matrix. Read before any visual/design work; tokens live in src/styles/brand.css.
+
+---
+
 # UI Design System
 
 The token vocabulary an agent must use to build on-brand UI: color, typography, spacing/rhythm, page width, radius, elevation, motion, and the primitive variant matrix. This is the machine-readable grounding for any design work — read it before molding PDP, homepage, or any section.

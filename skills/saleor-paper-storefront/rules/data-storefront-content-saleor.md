@@ -3,6 +3,13 @@ name: data-storefront-content-saleor
 description: Saleor Models (PageTypes + Pages) as the storefront copy surface, slug stack for per-channel copy, Configurator commerce-as-code. Use with CONTENT_PROVIDER=saleor or when adding content PageTypes/attributes.
 ---
 
+---
+
+name: data-storefront-content-saleor
+description: Saleor Models (PageTypes + Pages) as the storefront copy surface, slug stack for per-channel copy, Configurator commerce-as-code. Use with CONTENT_PROVIDER=saleor or when adding content PageTypes/attributes.
+
+---
+
 # Storefront Content — Saleor Models
 
 Paper models merchandising copy in **Saleor Models** (PageTypes + Pages + page-type attributes) and the storefront maps those Pages into the normalized `StorefrontContent` shape. This rule is the Saleor side — provider behavior, merge, and the code/Saleor scope split are in [`data-storefront-content.md`](data-storefront-content.md); attribute types in [`data-storefront-content-attributes.md`](data-storefront-content-attributes.md).

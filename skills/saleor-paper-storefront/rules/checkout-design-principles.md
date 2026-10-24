@@ -3,6 +3,13 @@ name: checkout-design-principles
 description: Evidence-based checkout UX principles (guest-first, mobile thumbs, express pay, fresh totals, trust at pay). Use when making checkout UX, flow, or layout decisions.
 ---
 
+---
+
+name: checkout-design-principles
+description: Evidence-based checkout UX principles (guest-first, mobile thumbs, express pay, fresh totals, trust at pay). Use when making checkout UX, flow, or layout decisions.
+
+---
+
 # Checkout Design Principles
 
 Evidence-based UX principles for Paper Checkout. Grounded in Baymard, Stripe, and conversion research; mapped to Paper's checkout v2 architecture.

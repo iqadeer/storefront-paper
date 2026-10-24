@@ -1,6 +1,13 @@
 ---
 name: data-caching
+description: Paper caching decisions: Cache Components (PPR), the sync page → Suspense → cached shell → islands model, cache-manifest.ts as source of truth, webhook revalidation, per-locale cache keys. Use when touching catalog data fetching, ISR, stale content, or revalidation.
+---
+
+---
+
+name: data-caching
 description: Paper caching decisions: Cache Components (PPR), the static/hybrid page-boundary model (cached shell rendered directly; Suspense only for dynamic holes), cache-manifest.ts as source of truth, webhook revalidation, per-locale cache keys. Use when touching catalog data fetching, ISR, stale content, or revalidation.
+
 ---
 
 # Data Caching

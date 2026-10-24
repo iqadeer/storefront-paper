@@ -3,6 +3,13 @@ name: data-auth-routes
 description: BFF auth and PPR-safe account routes: /api/auth/*, HttpOnly cookies, resolveSessionUser, header chrome refresh. Use when touching login/session, account pages, or fixing 'uncached data outside Suspense' on routes that read cookies.
 ---
 
+---
+
+name: data-auth-routes
+description: BFF auth and PPR-safe account routes: /api/auth/\*, HttpOnly cookies, resolveSessionUser, header chrome refresh. Use when touching login/session, account pages, or fixing 'uncached data outside Suspense' on routes that read cookies.
+
+---
+
 # Authenticated Route Segments (PPR / Cache Components)
 
 **CRITICAL** when `cacheComponents: true` and routes read session cookies. Reference implementation: `src/app/[channel]/(main)/account/`. The PPR boundary model and the generic "uncached data outside `<Suspense>`" fix menu live in [`data-caching.md`](data-caching.md); this rule covers what's auth-specific.

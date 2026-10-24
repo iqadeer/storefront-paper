@@ -1,6 +1,13 @@
 ---
 name: design-verification
+description: Post-design verification gates (autofixer loop): hard gate lint:design-tokens + tsc + lint; advisory PPR/LCP/a11y review. Use after molding UI to confirm it is Paper-correct, fast, and accessible.
+---
+
+---
+
+name: design-verification
 description: Post-design verification gates (autofixer loop). The hard gate is the single `pnpm run verify` command (docs + design-tokens + tsc + lint + tests); PPR/LCP/a11y stay advisory. Use after molding UI to confirm it is Paper-correct, fast, and accessible.
+
 ---
 
 # Design Verification Gates

@@ -3,6 +3,13 @@ name: product-high-cardinality
 description: High-cardinality catalogs on Paper — PDP_VARIANT_CAP, per-group control ladder, buy-box strategies, ?variant=/?sku= deep links, selection-index, PLP_FACETS alias OR. Use when products have many variants/options, over-cap PDPs, or facet config.
 ---
 
+---
+
+name: product-high-cardinality
+description: High-cardinality catalogs on Paper — PDP_VARIANT_CAP, per-group control ladder, buy-box strategies, ?variant=/?sku= deep links, selection-index, PLP_FACETS alias OR. Use when products have many variants/options, over-cap PDPs, or facet config.
+
+---
+
 # High-Cardinality Attributes
 
 Paper treats large option matrices as a first-class shape: **degrade by attribute-group shape**, never fetch unpaginated variant lists, and keep LCP on the static PDP shell.

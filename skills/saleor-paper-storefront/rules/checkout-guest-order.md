@@ -3,6 +3,13 @@ name: checkout-guest-order
 description: Guest order status page at /order/{key} — HMAC tokens, redacted Saleor-id landings, email step-up, Customer Emails /order/{{id}}, live Saleor refetch vs frozen URL. Use when touching post-pay confirmation, order lookup, or order-view tokens.
 ---
 
+---
+
+name: checkout-guest-order
+description: Guest order status page at /order/{key} — HMAC tokens, redacted Saleor-id landings, email step-up, Customer Emails /order/{{id}}, live Saleor refetch vs frozen URL. Use when touching post-pay confirmation, order lookup, or order-view tokens.
+
+---
+
 # Guest order status
 
 One link. The page is a locked glass door, not a key.

@@ -3,6 +3,13 @@ name: product-filtering
 description: PLP filtering/sorting — server-side categories/price/sort plus attribute facets via PLP_FACETS and ProductWhereInput alias OR. Use when changing product list filters, facet config, or sort.
 ---
 
+---
+
+name: product-filtering
+description: PLP filtering/sorting — server-side categories/price/sort plus attribute facets via PLP_FACETS and ProductWhereInput alias OR. Use when changing product list filters, facet config, or sort.
+
+---
+
 # Product Filtering
 
 Product list filtering and sorting. Attribute facets (colors/sizes/…) are **server-side** via Saleor; the PLP variant sample is only for card swatches and option-list hints.

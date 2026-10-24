@@ -3,6 +3,13 @@ name: paper-architecture
 description: Canonical Next.js 16 App Router stance for Paper: Server Components by default, Server Actions, Cache Components (PPR), BFF auth, two surfaces. Read first when unfamiliar with the codebase or making cross-cutting architectural changes.
 ---
 
+---
+
+name: paper-architecture
+description: Canonical Next.js 16 App Router stance for Paper: Server Components by default, Server Actions, Cache Components (PPR), BFF auth, two surfaces. Read first when unfamiliar with the codebase or making cross-cutting architectural changes.
+
+---
+
 # Paper architecture (canonical Next.js)
 
 North-star for how this storefront is built. Read this before unfamiliar changes; use task rules for implementation detail.

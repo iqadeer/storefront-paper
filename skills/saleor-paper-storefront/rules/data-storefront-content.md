@@ -3,6 +3,13 @@ name: data-storefront-content
 description: Provider-agnostic marketing/merchandising copy layer (announcement bar, homepage, cart/checkout copy): getStorefrontContent, defaults.ts, merge semantics, CONTENT_PROVIDER. Use when editing editorial copy or wiring new content fields.
 ---
 
+---
+
+name: data-storefront-content
+description: Provider-agnostic marketing/merchandising copy layer (announcement bar, homepage, cart/checkout copy): getStorefrontContent, defaults.ts, merge semantics, CONTENT_PROVIDER. Use when editing editorial copy or wiring new content fields.
+
+---
+
 # Storefront Content Layer
 
 Marketing and merchandising copy (announcement bar, homepage sections, cart trust labels, checkout empty states) lives in a **provider-agnostic content layer** — separate from catalog data, menus, and transactional checkout state.

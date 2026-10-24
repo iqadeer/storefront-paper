@@ -3,6 +3,13 @@ name: product-pdp
 description: PDP architecture: ProductShell + dynamic gallery/variant islands, gallery registry/layouts, LCP strategy, add-to-cart Server Action. Use when changing the product detail page layout, gallery, or buy box.
 ---
 
+---
+
+name: product-pdp
+description: PDP architecture: ProductShell + dynamic gallery/variant islands, gallery registry/layouts, LCP strategy, add-to-cart Server Action. Use when changing the product detail page layout, gallery, or buy box.
+
+---
+
 # Product Detail Page
 
 PDP architecture, the variant-aware image gallery, and the add-to-cart flow. Variant _selection_ logic is in [`product-variants.md`](product-variants.md); caps, buy-box strategies, and over-budget deep links are in [`product-high-cardinality.md`](product-high-cardinality.md); the PPR boundary model and `getProductData` caching are in [`paper-architecture.md`](paper-architecture.md) / [`data-caching.md`](data-caching.md) — this rule covers what's PDP-specific.
