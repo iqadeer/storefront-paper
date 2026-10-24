@@ -92,7 +92,7 @@ async function OrderDetailContent({ params }: Props) {
 								return (
 									<div key={line.id} className="flex items-center gap-4 px-5 py-4">
 										{product.thumbnail && (
-											<div className="bg-secondary/30 h-16 w-16 shrink-0 overflow-hidden rounded-lg border">
+											<div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg border bg-secondary/30">
 												<Image
 													src={product.thumbnail.url}
 													alt={product.thumbnail.alt ?? productName}
@@ -189,7 +189,7 @@ async function OrderDetailContent({ params }: Props) {
 
 					<LinkWithChannel
 						href="/contact"
-						className="hover:bg-secondary/50 block w-full rounded-xl border px-5 py-3 text-center text-sm font-medium transition-colors"
+						className="block w-full rounded-xl border px-5 py-3 text-center text-sm font-medium transition-colors hover:bg-secondary/50"
 					>
 						{t("needHelp")}
 					</LinkWithChannel>
